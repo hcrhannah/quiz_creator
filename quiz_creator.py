@@ -7,8 +7,13 @@ while True:
     b = input("Choice b: ")
     c = input("Choice c: ")
     d = input("Choice d: ")
-    answer = input("Correct answer (a/b/c/d): ")
 
+    while True:
+        answer = input("Correct answer (a/b/c/d): ").lower()
+        if answer in ['a', 'b', 'c', 'd']:
+            break
+        print("Invalid input. Please enter a, b, c, or d.")
+        
     print("Question:", question)
     print("a)", a)
     print("b)", b)

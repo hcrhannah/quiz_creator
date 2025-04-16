@@ -1,3 +1,4 @@
+question_number = 1
 while True:
     print("Enter your question (or type 'exit' to stop):")
     question = input("Enter question: ")
@@ -21,11 +22,13 @@ while True:
     print("d)", d)
     print("Answer:", answer)
 
-    with open("quiz.txt", "w") as file:
-        file.write("Question: " + question + "\n")
+    with open("quiz.txt", "a") as file:
+        file.write(f"Question #{question_number}: {question}\n")
         file.write("a) " + a + "\n")
         file.write("b) " + b + "\n")
         file.write("c) " + c + "\n")
         file.write("d) " + d + "\n")
         file.write("Answer: " + answer + "\n")
         file.write("---\n")
+
+    question_number += 1

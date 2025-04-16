@@ -1,9 +1,13 @@
+print("Welcome to the Quiz Creator! 🧠")
+print("Type 'exit' anytime to stop and save your quiz.\n")
+
 question_number = 1
 while True:
     print("Enter your question (or type 'exit' to stop):")
     question = input("Enter question: ")
     if question.lower() == "exit":
         break
+    
     a = input("Choice a: ")
     b = input("Choice b: ")
     c = input("Choice c: ")
@@ -14,13 +18,14 @@ while True:
         if answer in ['a', 'b', 'c', 'd']:
             break
         print("Invalid input. Please enter a, b, c, or d.")
-        
+
+    print("\n✔️ Question preview:")    
     print("Question:", question)
     print("a)", a)
     print("b)", b)
     print("c)", c)
     print("d)", d)
-    print("Answer:", answer)
+    print("💡 Answer:", answer)
 
     with open("quiz.txt", "a") as file:
         file.write(f"Question #{question_number}: {question}\n")
@@ -30,5 +35,10 @@ while True:
         file.write("d) " + d + "\n")
         file.write("Answer: " + answer + "\n")
         file.write("---\n")
-
+        
+    print(f"✅ Question #{question_number} saved successfully!\n")
     question_number += 1
+
+
+
+print("💾 Thank you! All questions have been saved to quiz.txt. Goodbye!")

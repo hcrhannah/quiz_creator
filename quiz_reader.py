@@ -35,10 +35,20 @@ for idx, q in enumerate(questions, start=1):
     print(f"c) {q['choices']['c']}")
     print(f"d) {q['choices']['d']}")
 
-    user_answer = input("Your answer (a/b/c/d): ").lower()
+
+
+    while True:
+        user_answer = input("Your answer (a/b/c/d): ").lower()
+        if user_answer in ['a', 'b', 'c', 'd']:
+            break
+        print("Invalid input. Please enter a, b, c, or d.")
+
     
     if user_answer == q['answer']:
         print("Correct!\n")
         score += 1
     else:
         print(f"Wrong! Correct answer is {q['answer']}\n")
+
+
+print(f"You got {score} out of {len(questions)}")

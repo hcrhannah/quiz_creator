@@ -24,3 +24,21 @@ for raw_q in raw_questions:
     })
 
 print(questions)
+
+
+score = 0
+
+for idx, q in enumerate(questions, start=1):
+    print(f"Question {idx}: {q['question']}")
+    print(f"a) {q['choices']['a']}")
+    print(f"b) {q['choices']['b']}")
+    print(f"c) {q['choices']['c']}")
+    print(f"d) {q['choices']['d']}")
+
+    user_answer = input("Your answer (a/b/c/d): ").lower()
+    
+    if user_answer == q['answer']:
+        print("Correct!\n")
+        score += 1
+    else:
+        print(f"Wrong! Correct answer is {q['answer']}\n")

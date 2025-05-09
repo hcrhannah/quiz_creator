@@ -1,3 +1,5 @@
+import random
+
 with open("quiz.txt", "r") as file:
     content = file.read()
 
@@ -26,7 +28,12 @@ for raw_q in raw_questions:
 print(questions)
 
 
+random.shuffle(questions)
+
+# Start the quiz
 score = 0
+
+print("📚 Welcome to the Quiz! Answer by typing a, b, c, or d.\n")
 
 for idx, q in enumerate(questions, start=1):
     print(f"Question {idx}: {q['question']}")

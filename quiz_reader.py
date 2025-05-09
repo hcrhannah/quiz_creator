@@ -1,5 +1,9 @@
-# Read quiz questions from file
 with open("quiz.txt", "r") as file:
     content = file.read()
 
-print(content)
+# Split into questions
+raw_questions = content.strip().split('---')
+
+for q in raw_questions:
+    print(q)
+    print("-----")
